@@ -3,7 +3,7 @@
 ## 🟢 Hashing
 
 Hashing is the `process of converting data` of arbitrary size into `a fixed-length string of characters`, called a **hash value** or **digest**, in such a way that it is **computationally infeasible to reverse** or recover the original data.  
-It is **irreversible** — you `cannot reconstruct the original data from the hash`.
+- It is **irreversible** — you `cannot reconstruct the original data from the hash`.
 
 **Example:**  
 📝 `SHA-256` always produces a 256-bit hash, no matter the input size.
