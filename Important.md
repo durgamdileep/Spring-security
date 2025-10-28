@@ -143,3 +143,28 @@ Encryption is the `process of converting data` into an `unreadable form (ciphert
 
 ---
 
+
+# 🔒 Why does HTTPS use a combination of asymmetric and symmetric encryption (hybrid encryption) instead of using only one type?
+
+The reason for using hybrid encryption — leveraging the strengths of both methods:
+
+- 🛡️ **Asymmetric:** secure key exchange
+- ⚡ **Symmetric:** fast data transfer
+
+💡 It’s specific, accurate, and ties directly to how HTTPS actually works.
+
+## 🔒 HTTPS Connection Flow (Hybrid Encryption)
+
+1. Browser → Server: 💻 Browser sends a request to connect using HTTPS.
+2. Server → Browser: 🖥️ Server sends its TLS/SSL certificate, which contains the server’s public key.
+3. Browser:
+  - ✅ Checks if the certificate is valid and trusted.
+  - 🔑 Generates a random symmetric session key (used for faster encryption).
+  - 🔒 Encrypts the session key with the server’s public key (asymmetric encryption).
+4. Browser → Server: 📤 Sends the encrypted session key to the server.
+5. Server: 🗝️ Uses its private key to decrypt the session key.
+6. Both Browser & Server: 🔄 Now both have the same symmetric session key, which they use to encrypt/decrypt all further data.
+
+✅ From here on, symmetric encryption is used because it’s much faster than asymmetric encryption.
+
+---
