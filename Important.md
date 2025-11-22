@@ -168,3 +168,50 @@ The reason for using hybrid encryption — leveraging the strengths of both meth
 ✅ From here on, symmetric encryption is used because it’s much faster than asymmetric encryption.
 
 ---
+
+# 🔐 Stateless vs 🔒 Stateful Authentication
+
+## 🔐 Stateless (most common with JWT)
+
+- 🗂️ The server **does not store any login session**.  
+- 📩 Each request must include all required info (**usually a JWT token**).  
+- 🧾 The server just **checks the token and proceeds**.  
+- 🧠 No session, no server-side memory.
+
+### 🧲 Think of it like:
+- Every request brings its own **ID card**.  
+- If the ID card is valid → ✅ you get in.  
+- If not → ❌ you’re out.
+
+### 🛠️ Used when:
+- 🌐 Building **REST APIs**
+- 🧩 **Microservices**
+- 🚀 **Scalable systems**
+
+---
+
+## 🔒 Stateful (uses sessions)
+
+- 🗄️ The server **creates and stores a session** after login.  
+- 🍪 The client receives a **session ID (cookie)**.  
+- 📚 For every request, the server **looks up the session in memory**.
+
+### 🧲 Think of it like:
+- You log in once → server gives you a **membership token**.  
+- Server keeps a **copy** and checks it each time.
+
+### 🛠️ Used when:
+- 🧱 Traditional web apps (**Thymeleaf, JSP, etc.**)  
+- 🏛️ Systems where **server-side session management** is needed  
+
+---
+
+## ⚡ Quick Comparison
+
+| 🔍 Feature | 🔐 Stateless | 🔒 Stateful |
+|-----------|--------------|-------------|
+| 🧠 Server stores login info? | ❌ No | ✔️ Yes |
+| 🧪 Common example | JWT-based auth | Session-based auth |
+| 📈 Scalability | 🚀 Very high | 🧱 Lower (session storage needed) |
+| 🛡️ Used in Spring Security? | ✔️ Yes (with JWT) | ✔️ Yes (default session auth) |
+
